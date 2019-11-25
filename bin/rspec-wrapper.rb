@@ -3,9 +3,12 @@
 
 require 'fileutils'
 
+puts "all files: #{ARGV}"
+
 def spec_walk(path)
   dir = File.dirname(path)
   if Dir.exist?(File.join(dir, 'spec'))
+    # puts "including directory: #{dir}"
     dir
   elsif ['.', '/'].include?(dir)
     false
